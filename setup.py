@@ -1,8 +1,14 @@
 """
 Simple Date Calculator
 """
-import sys
+
+
+import os
 from setuptools import setup
+
+
+def read(frame):
+    return open(os.path.join(os.path.dirname(__file__), frame)).read()
 
 
 setup(
@@ -12,13 +18,13 @@ setup(
     license='MIT',
     author='Engine Treasure',
     author_email='enginechen07@gmail.com',
-    description=__doc__.strip('\n'),
+    description=read("README"),
     # packages=[],
     scripts=['bin/date-cal'],
     # include_package_data=True,
     zip_safe=False,
     platforms='any',
-    install_requires=['docopt'],
+    install_requires=['click'],
     # classifiers=[
     #     # As from https://pypi.python.org/pypi?%3Aaction=list_classifiers
     #     #'Development Status :: 1 - Planning',
