@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import datetime
@@ -27,27 +27,27 @@ class DateCalculator(object):
     def cal(self):
 
         def today(dt):
-            print "It is {0}, {1}.\nHave a nice day~".format(
+            print("It is {0}, {1}.\nHave a nice day~".format(
                 dt,
-                WEEKDAY[dt.weekday()]
+                WEEKDAY[dt.weekday()])
             )
 
         def next_date(dt, num):
             dt_ = dt + datetime.timedelta(num)
             ab = "after" if num >= 0 else "before"
-            print "{0} days {1} {2} is {3}".format(
+            print("{0} days {1} {2} is {3}".format(
                 num,
                 ab,
                 dt,
-                dt_
+                dt_)
             )
 
         def in_days(dt_1, dt_2):
             delta = dt_2 - dt_1
-            print "There are {0} days between {1} and {2}.".format(
+            print("There are {0} days between {1} and {2}.".format(
                 delta,
                 dt_1,
-                dt_2
+                dt_2)
             )
 
         if not self.date_2 and not self.nod:
@@ -64,7 +64,7 @@ class DateCalculator(object):
 
 def date_format(ctx, param, value):
     """"""
-    if isinstance(value, (unicode, str)):
+    if isinstance(value, str):
         value = value.replace("/", "").replace(".", "").replace("-", "")
         try:
             value = datetime.datetime.strptime(value, "%Y%m%d")
